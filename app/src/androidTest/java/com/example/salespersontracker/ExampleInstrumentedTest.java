@@ -1,4 +1,4 @@
-package io.github.djunicode.salespersontracker;
+package com.example.salespersontracker;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("io.github.djunicode.salespersontracker", appContext.getPackageName());
+        assertEquals( "com.example.salespersontracker", appContext.getPackageName() );
     }
 }
