@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("io.github.djunicode.salespersontracker", appContext.getPackageName());
+        assertEquals( "io.github.djunicode.salespersontracker", appContext.getPackageName() );
     }
 }
