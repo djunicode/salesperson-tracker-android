@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     TextView signup_link;
     EditText email;
@@ -16,7 +16,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.login );
+        setContentView( R.layout.activity_login );
 
         email = findViewById( R.id.editEmail );
         pass = findViewById( R.id.editPass );
@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity {
         signup_link.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this,Signup.class);
+                Intent intent = new Intent( LoginActivity.this, SignupActivity.class);
 
                 startActivity( intent );
             }
