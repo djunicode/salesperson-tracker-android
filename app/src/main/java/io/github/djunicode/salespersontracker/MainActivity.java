@@ -1,4 +1,4 @@
-package com.example.unicodeui;
+package io.github.djunicode.salespersontracker;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
