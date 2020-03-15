@@ -1,5 +1,4 @@
-package com.example.unicodeui;
-
+package io.github.djunicode.salespersontracker;
 
 import android.os.Bundle;
 
