@@ -1,5 +1,6 @@
 package io.github.djunicode.salespersontracker;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+
+import android.Manifest;
+import android.app.PendingIntent;
+import android.content.Intent;
+
 import android.os.Bundle;
+
 
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -32,9 +39,22 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
     BottomNavigationView mBottomNavigationView;
     LocationFragment mLocationFragment;
     CheckpointsFragment mCheckpointsFragment;
@@ -72,10 +92,20 @@ public class MainActivity extends AppCompatActivity {
 
 String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Dummy title 5" };
     String s2[]={"Dummy content 1","Dummy content 2","Dummy content 3","Dummy content 4","Dummy content 5" };
+
+    static MainActivity instance;
+    LocationRequest locationRequest;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    public static MainActivity getInstance()
+    {
+        return instance;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         mBottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -87,36 +117,6 @@ String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Du
 
         showLocationFragment();
 
-               // showLocationFragment();
-        /*
-        //loadFragment(new LocationFragment());
-
-        mBottomNavigationView.setOnNavigationItemReselectedListener(
-                new BottomNavigationView.OnNavigationItemReselectedListener() {
-                    @Override
-                    public void onNavigationItemReselected(@NonNull MenuItem item) {
-                        Fragment fragment=null;
-                        switch (item.getItemId())
-                        {
-                            case R.id.Location:
-                                fragment=new LocationFragment();
-                                loadFragment(fragment);
-                                break;
-                            case R.id.Checkpoints:
-                                fragment=new CheckpointsFragment();
-                                loadFragment(fragment);
-                                break;
-                            case R.id.UpdateTargets:
-                                fragment=new UpdateTargetFragment();
-                                loadFragment(fragment);
-                                break;
-
-
-                        }
-                    }
-                });
-
-         */
 
 
     }//on create ends
@@ -152,6 +152,47 @@ String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Du
             ft.hide(mUpdateTargetFragment);
         }
         ft.commit();
+
+        instance=this;
+        Dexter.withActivity(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse response) {
+                updateLocation();
+            }
+
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse response) {
+
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+
+            }
+        }).check();
+    }
+
+    private void updateLocation() {
+        buildLocationRequest();
+
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest,getPendingIntent());
+    }
+
+    private void buildLocationRequest() {
+        locationRequest=new LocationRequest();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(5000);
+        locationRequest.setFastestInterval(3000);
+        locationRequest.setSmallestDisplacement(10f);
+    }
+
+    private PendingIntent getPendingIntent()
+    {
+        Intent intent =new Intent(this,LocationService.class);
+        intent.setAction(LocationService.ACTION_PROCESS_UPDATE);
+        return PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+
     }
 
     public void showUpdateTargetFragment() {
