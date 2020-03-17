@@ -27,8 +27,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+<<<<<<< HEAD
 
 
     implementation 'com.google.android.gms:play-services-maps:9.0.1'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+||||||| 04aa887
+=======
+     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:9.0.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+>>>>>>> 34ad03e00ea5587c5ca20884f9643d718fabb493
 }

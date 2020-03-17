@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -16,3 +17,24 @@
         android:title="UpdateTargets" />
 
 </menu>
+||||||| 04aa887
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Location"
+        android:icon="@drawable/locations"
+        android:title="Location" />
+    <item
+        android:id="@+id/Checkpoints"
+        android:icon="@drawable/checkpoints"
+        android:title="Checkpoints" />
+    <item
+        android:id="@+id/UpdateTargets"
+        android:icon="@drawable/update_target"
+        android:title="UpdateTargets" />
+
+</menu>
+>>>>>>> 34ad03e00ea5587c5ca20884f9643d718fabb493
