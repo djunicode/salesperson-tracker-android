@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.djunicode.salespersontracker">
-<<<<<<< HEAD
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
-||||||| 04aa887
-=======
-      <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
->>>>>>> 34ad03e00ea5587c5ca20884f9643d718fabb493
 
     <application
         android:allowBackup="true"
@@ -29,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
 
 
         <meta-data
@@ -37,13 +30,7 @@
             android:value="AIzaSyBkjQQly6BOM1LIbIK4Y7jxdTb0hvIemXY"/>
 
 
-||||||| 04aa887
-=======
-          <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBkjQQly6BOM1LIbIK4Y7jxdTb0hvIemXY"/>
 
->>>>>>> 34ad03e00ea5587c5ca20884f9643d718fabb493
     </application>
 
 </manifest>
