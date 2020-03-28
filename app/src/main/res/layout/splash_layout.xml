@@ -12,18 +12,17 @@
         android:layout_centerVertical="true"
         android:paddingBottom="30dp"
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/splashimage"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/raleway_semibold"
         android:text="Salesperson Tracker"
-        android:fontFamily="cursive"
-        android:layout_centerHorizontal="true"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
 
-        android:layout_centerVertical="true"
-
-        android:layout_alignBottom="@+id/splashimage"/>-->
+        android:textSize="35sp"
+        android:textStyle="bold" />-->
 
 </RelativeLayout>
