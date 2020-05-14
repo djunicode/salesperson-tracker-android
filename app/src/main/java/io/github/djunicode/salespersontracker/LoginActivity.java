@@ -97,8 +97,6 @@ public class LoginActivity extends AppCompatActivity {
                               int mFlag  = response.body().getFlag();
                               String mName= response.body().getName();
                               String mToken= response.body().getToken();
-
-
                               String mPhoto = response.body().getPhoto();
                                 String mlat= String.valueOf(response.body().getLat());
                                 String mlong= String.valueOf(response.body().getLong());
@@ -112,6 +110,8 @@ public class LoginActivity extends AppCompatActivity {
                                 LoginToken = getSharedPreferences("AutnTokenLogin", MODE_PRIVATE);
                                 SharedPreferences.Editor e = LoginToken.edit();
                                 e.putString("Auth Token",  mToken);
+                                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
 
                             }
                             else{
@@ -134,15 +134,15 @@ public class LoginActivity extends AppCompatActivity {
 
                             Toast.makeText(getApplicationContext(),t.getMessage(),Toast.LENGTH_LONG).show();
                             Log.i("SEE",t.fillInStackTrace().getLocalizedMessage());
-                           // Log.i("SEE",t.fillInStackTrace().getMessage());
+
                             t.printStackTrace();
-                            //Log.i("SEE",t.fillInStackTrace().getCause());
+
                             Toast.makeText(getApplicationContext(),t.fillInStackTrace().getLocalizedMessage(),Toast.LENGTH_LONG).show();
                             Toast.makeText(getApplicationContext(),t.fillInStackTrace().toString(),Toast.LENGTH_LONG).show();
-                          //  Toast.makeText(getApplicationContext(), t.getCause().toString(),Toast.LENGTH_LONG).show();
+
                             Toast.makeText(getApplicationContext(), t.getStackTrace().toString(),Toast.LENGTH_LONG).show();
 
-                            Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Error occured while connecting to the server",Toast.LENGTH_LONG).show();
 
                         }
                     });

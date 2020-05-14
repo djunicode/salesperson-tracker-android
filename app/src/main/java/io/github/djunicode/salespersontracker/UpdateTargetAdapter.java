@@ -20,8 +20,6 @@ public class UpdateTargetAdapter extends RecyclerView.Adapter < UpdateTargetAdap
         ctx=ct;
         TargetTitles=s1;
         TargetInfo=s2;
-
-
     }
 
 
