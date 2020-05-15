@@ -17,6 +17,11 @@ import android.app.PendingIntent;
 import android.content.Intent;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+
+import androidx.annotation.NonNull;
 
 
 import android.view.MenuItem;
@@ -51,10 +56,14 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
     BottomNavigationView mBottomNavigationView;
     LocationFragment mLocationFragment;
     CheckpointsFragment mCheckpointsFragment;
@@ -86,8 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
    // BottomNavigationView mBottomNavigationView;//Fragment active;
 
 String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Dummy title 5" };
@@ -107,7 +114,6 @@ String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Du
         setContentView(R.layout.activity_main);
 
 
-
         mBottomNavigationView=findViewById(R.id.bottom_navigation);
         mLocationFragment=new LocationFragment();
         mUpdateTargetFragment=new UpdateTargetFragment();
@@ -117,8 +123,45 @@ String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Du
 
         showLocationFragment();
 
+               // showLocationFragment();
+        /*
+        //loadFragment(new LocationFragment());
+
+        mBottomNavigationView.setOnNavigationItemReselectedListener(
+                new BottomNavigationView.OnNavigationItemReselectedListener() {
+                    @Override
+                    public void onNavigationItemReselected(@NonNull MenuItem item) {
+                        Fragment fragment=null;
+                        switch (item.getItemId())
+                        {
+                            case R.id.Location:
+                                fragment=new LocationFragment();
+                                loadFragment(fragment);
+                                break;
+                            case R.id.Checkpoints:
+                                fragment=new CheckpointsFragment();
+                                loadFragment(fragment);
+                                break;
+                            case R.id.UpdateTargets:
+                                fragment=new UpdateTargetFragment();
+                                loadFragment(fragment);
+                                break;
+
+
+                        }
+                    }
+                });
+
+         */
 
     }//on create ends
+
+
+
+
+
+
+
 
     public void showLocationFragment() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -184,7 +227,11 @@ String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Du
         locationRequest.setInterval(5000);
         locationRequest.setFastestInterval(3000);
         locationRequest.setSmallestDisplacement(10f);
+
     }
+
+
+
 
     private PendingIntent getPendingIntent()
     {

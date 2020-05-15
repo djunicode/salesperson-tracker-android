@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:background="#E5E5E5"
+
 
                 android:padding="2dp"
                 android:text="Dummy product"
@@ -42,7 +42,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
 
-                android:background="#F5F5F5	"
+
                 android:padding="2dp"
                 android:text="dummy info"
                 android:textSize="18sp" />
