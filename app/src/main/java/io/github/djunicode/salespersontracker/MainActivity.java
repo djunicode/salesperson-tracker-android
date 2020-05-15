@@ -224,8 +224,8 @@ String s1[]={"Dummy title 1","Dummy title 2","Dummy title 3","Dummy title 4","Du
     private void buildLocationRequest() {
         locationRequest=new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(5000);
-        locationRequest.setFastestInterval(3000);
+        locationRequest.setInterval(1800*1000);
+        locationRequest.setFastestInterval(1500*1000);
         locationRequest.setSmallestDisplacement(10f);
 
     }
