@@ -110,6 +110,8 @@ public class LoginActivity extends AppCompatActivity {
                                 LoginToken = getSharedPreferences("AutnTokenLogin", MODE_PRIVATE);
                                 SharedPreferences.Editor e = LoginToken.edit();
                                 e.putString("Auth Token",  mToken);
+                                e.putString("ID",  response.body().getSId());
+                                e.commit();
                                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
 
