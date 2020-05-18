@@ -57,8 +57,8 @@
             android:orientation="horizontal"
             android:weightSum="4">
 
-            <TextView
-                android:id="@+id/tv3"
+            <EditText
+                android:id="@+id/quantityEt"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="12dp"
@@ -68,21 +68,20 @@
                 android:background="@android:color/white"
 
                 android:padding="2dp"
-                android:text="UNITS\nSOLD"
+                android:hint="Enter\n Quantity"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <ImageButton
-                android:id="@+id/button2"
+            <Button
+                android:id="@+id/bill_button"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
-                android:src="@drawable/outline_minimize_black_18dp"
-                android:text="Button" />
+                android:text="Bill" />
 
 
         </LinearLayout>

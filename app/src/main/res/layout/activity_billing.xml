@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BillingActivity"
+    android:padding="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:layout_height="wrap_content"
+        android:text="Bill details"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:layout_margin="5dp"
+        />
+    <TextView
+        android:id="@+id/nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:textSize="16dp"
+        android:textAlignment="center"
+        android:text="Name    : "
+        android:layout_below="@id/title"
+        android:layout_margin="5dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/colorBlack"
+        android:layout_toRightOf="@+id/nameTv"
+        android:layout_below="@id/title"
+        android:hint="Your name"
+        android:layout_margin="5dp"
+        android:id="@+id/nameEt"
+        android:visibility="visible"
+        />
+    <TextView
+        android:id="@+id/emailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:text="Email id : "
+        android:textSize="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/nameTv"
+        android:layout_margin="5dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/colorBlack"
+        android:visibility="visible"
+        android:layout_toRightOf="@+id/emailTv"
+        android:layout_below="@id/nameEt"
+        android:hint="Your name"
+        android:layout_margin="5dp"
+        android:id="@+id/emailEt"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/productName"
+        android:textSize="16dp"
+        android:layout_below="@id/emailTv"
+        android:text="Product Name :"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/productInfo"
+        android:textSize="16dp"
+        android:layout_below="@id/productName"
+        android:text="Product Info : "
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/productQuantity"
+        android:textSize="16dp"
+        android:layout_below="@id/productInfo"
+        android:text="Product Quantity : "
+        android:layout_margin="5dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/generateBillBtn"
+        android:layout_below="@id/productQuantity"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="Generate Bill"/>
+
+
+</RelativeLayout>
