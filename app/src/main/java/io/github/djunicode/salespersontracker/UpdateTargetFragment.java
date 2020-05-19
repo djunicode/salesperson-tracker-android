@@ -70,4 +70,5 @@ public class UpdateTargetFragment extends Fragment {
         r2.setLayoutManager(new LinearLayoutManager(getContext()));
         return r;
     }
+
 }

@@ -35,12 +35,13 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText email;
     EditText pass;
-
-    SharedPreferences LoginToken;
+    Button loginBtn;
+  SharedPreferences LoginToken;
     // AUTH TOKEN HERE
     Button btn_login;
     String EmailEntered;
     String PasswordEntered;
+  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -49,6 +50,14 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById( R.id.editEmail );
         pass = findViewById( R.id.editPass );
         signup_link = findViewById( R.id.link_signup );
+        loginBtn=findViewById(R.id.btn_login);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,ItemListActivity.class));
+            }
+        });
         signup_link.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
