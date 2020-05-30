@@ -105,6 +105,9 @@ public class LoginActivity extends AppCompatActivity {
 
                               int mFlag  = response.body().getFlag();
                               String mName= response.body().getName();
+
+                              ApplicationClass.setSalespersonName(mName);
+
                               String mToken= response.body().getToken();
                               String mPhoto = response.body().getPhoto();
                                 String mlat= String.valueOf(response.body().getLat());
