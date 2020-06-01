@@ -46,6 +46,7 @@ public class UpdateTargetFragment extends Fragment {
                 .addConverterFactory( GsonConverterFactory.create() )
                 .build();
 
+        /*
         TaskRetriever tr = retrofit.create( TaskRetriever.class );
         Call<List<DailyTask>> call = tr.getDailyTasks();
         call.enqueue( new Callback<List<DailyTask>>() {
@@ -63,6 +64,7 @@ public class UpdateTargetFragment extends Fragment {
                 Toast.makeText( getContext(), "Error in fetching tasks..", Toast.LENGTH_SHORT ).show();
             }
         } );
+        */
 
         RecyclerView r2 = r.findViewById(R.id.UpdateTargetsRecyclerView);
         RecyclerView.Adapter adapter2 = new UpdateTargetAdapter(getContext(), task_id, qty);
