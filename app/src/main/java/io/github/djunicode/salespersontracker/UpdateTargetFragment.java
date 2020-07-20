@@ -1,5 +1,7 @@
 package io.github.djunicode.salespersontracker;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -46,9 +49,10 @@ public class UpdateTargetFragment extends Fragment {
                 .addConverterFactory( GsonConverterFactory.create() )
                 .build();
 
-        /*
+        HashMap<String,String> map = new HashMap<>(  );
+        map.put( "Authorization",getToken() );
         TaskRetriever tr = retrofit.create( TaskRetriever.class );
-        Call<List<DailyTask>> call = tr.getDailyTasks();
+        Call<List<DailyTask>> call = tr.getDailyTasks(map);
         call.enqueue( new Callback<List<DailyTask>>() {
             @Override
             public void onResponse(Call<List<DailyTask>> call, Response<List<DailyTask>> response) {
@@ -64,7 +68,7 @@ public class UpdateTargetFragment extends Fragment {
                 Toast.makeText( getContext(), "Error in fetching tasks..", Toast.LENGTH_SHORT ).show();
             }
         } );
-        */
+
 
         RecyclerView r2 = r.findViewById(R.id.UpdateTargetsRecyclerView);
         RecyclerView.Adapter adapter2 = new UpdateTargetAdapter(getContext(), task_id, qty);
@@ -73,4 +77,11 @@ public class UpdateTargetFragment extends Fragment {
         return r;
     }
 
+    public String getToken(){
+        String token="";
+        SharedPreferences authToken = getActivity().getSharedPreferences( "AutnTokenLogin", Context.MODE_PRIVATE );
+        token = authToken.getString( "Auth Token","-1" );
+        token = "Token "+token;
+        return token;
+    }
 }
