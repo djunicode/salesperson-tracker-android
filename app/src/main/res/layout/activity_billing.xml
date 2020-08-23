@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".BillingActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Bill details"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/contactTv"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/title"
+        android:layout_margin="5dp"
+        android:text="Contact no.  : "
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/contactEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/contactTv"
+        android:hint="Your contact no."
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/emailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:layout_below="@id/contactTv"
+        android:layout_margin="5dp"
+        android:text="Email id     : "
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contactEt"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/emailTv"
+        android:hint="Your name"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailTv"
+        android:layout_margin="5dp"
+        android:text="Product Name :"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/productInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productName"
+        android:layout_margin="5dp"
+        android:text="Product Info : "
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/productQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productInfo"
+        android:layout_margin="5dp"
+        android:text="Product Quantity : "
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/buyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productQuantity"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="Buy and generate bill" />
+
+
+</RelativeLayout>
