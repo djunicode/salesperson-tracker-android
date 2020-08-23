@@ -1,26 +1,21 @@
 package io.github.djunicode.salespersontracker;
 
-import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Location;
-import android.os.IBinder;
 import android.widget.Toast;
-
-import androidx.annotation.Nullable;
 
 import com.google.android.gms.location.LocationResult;
 
-
+import androidx.annotation.Nullable;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
-import okio.ByteString;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -33,7 +28,7 @@ public class LocationService extends BroadcastReceiver {
     WebSocket webSocket;
     //creating retrofit instance
     public static Retrofit retrofit=new Retrofit.Builder()
-            .baseUrl("http://127.0.0.1:8000/Operations/")
+            .baseUrl("http://jash271.pythonanywhere.com/Operations/")
             .addConverterFactory(GsonConverterFactory.create()).build();
     private SharedPreferences LoginToken;
 
